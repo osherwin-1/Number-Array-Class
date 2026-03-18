@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "Header.h"
+#include "Header.h" // Ensures that the class definition is included
 using namespace std;
 
 NumberArray::NumberArray(int size) { // Constructor with default parameter
