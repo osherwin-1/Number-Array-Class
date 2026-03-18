@@ -19,6 +19,19 @@ int main() { // Main function to demonstrate the NumberArray class
     mt19937 gen(rd());
     uniform_real_distribution<> dist(1.0, 100.0);
 
+
+    // Statistics for known array
+	cout << "\nKnown array:\n";
+	arr2.setNumber(0, 2);
+	arr2.setNumber(1, 4);
+	arr2.setNumber(2, 6);
+	arr2.setNumber(3, 8);
+	arr2.setNumber(4, 10);
+	arr2.display();
+    cout << "\nMin: " << arr2.getMinimum() << endl;
+    cout << "Max: " << arr2.getMaximum() << endl;
+    cout << "Average: " << arr2.getMean() << endl;
+    
     // Fill array with random numbers
     for (int i = 0; i < 5; i++) {
         arr2.setNumber(i, dist(gen));
