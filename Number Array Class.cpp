@@ -22,7 +22,7 @@ NumberArray::~NumberArray() { // Destructor
 }
 
 void NumberArray::setNumber(int index, double value) { // Mutator to set a number at a specific index
-	if (index >= 0 && index < size) 
+	if (index >= 0 && index < size)  // Bounds checking to prevent out-of-bounds access
 	{
 		arr[index] = value;
 	} 

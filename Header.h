@@ -7,7 +7,7 @@ class NumberArray {
 private:
 	int size;
 	double* arr;
-	static const int maxSize = 50;
+	static const int maxSize = 10;
 
 public:
 	
