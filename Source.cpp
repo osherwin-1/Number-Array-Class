@@ -73,5 +73,36 @@ int main() { // Main function to demonstrate the NumberArray class
     arr2.setNumber(5, 5);
     cout << arr2.getNumber(5) << endl;
 
+    cout << "\nEdge Case Tests:\n";
+
+    // Test array size of 1 (Edge case)
+    NumberArray edgeArr(1);
+
+    edgeArr.setNumber(0, -3.5);
+
+    cout << "\nSingle-element array:\n";
+    edgeArr.display();
+
+    cout << "Min: " << edgeArr.getMinimum() << endl;
+    cout << "Max: " << edgeArr.getMaximum() << endl;
+    cout << "Average: " << edgeArr.getMean() << endl;
+
+    cout << "Value at index 0: " << edgeArr.getNumber(0) << endl;
+
+    edgeArr.setNumber(0, 0.0);
+    cout << "\nUpdated to 0.0:\n";
+    edgeArr.display();
+
+    cout << "Min: " << edgeArr.getMinimum() << endl;
+    cout << "Max: " << edgeArr.getMaximum() << endl;
+    cout << "Average: " << edgeArr.getMean() << endl;
+
+    edgeArr.setNumber(0, 7.25);
+    cout << "\nUpdated to 7.25:\n";
+    edgeArr.display();
+
+    cout << "Min: " << edgeArr.getMinimum() << endl;
+    cout << "Max: " << edgeArr.getMaximum() << endl;
+    cout << "Average: " << edgeArr.getMean() << endl;
     return 0;
 }
