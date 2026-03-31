@@ -21,6 +21,16 @@ NumberArray::~NumberArray() { // Destructor
 	cout << "Array memory has been freed." << endl;
 }
 
+NumberArray::NumberArray(const NumberArray& other) { // Copy constructor
+	size = other.size;
+	arr = new double[size];
+	for (int i = 0; i < size; i++) {
+		arr[i] = other.arr[i];
+	}
+
+}
+
+
 void NumberArray::setNumber(int index, double value) { // Mutator to set a number at a specific index
 	if (index >= 0 && index < size)  // Bounds checking to prevent out-of-bounds access
 	{

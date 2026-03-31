@@ -1,7 +1,6 @@
 #pragma once
 #define HEADER_H
 #include <iostream>
-using namespace std;
 
 class NumberArray {
 private:
@@ -13,6 +12,9 @@ public:
 	
 	NumberArray(int size = maxSize); // Constructor with default parameter
 	~NumberArray(); // Destructor
+	NumberArray(const NumberArray& other); // Copy constructor
+
+	NumberArray& operator=(const NumberArray& other); // Assignment Operator
 
 	void setNumber(int index, double value); // Mutator to set a number at a specific index
 
