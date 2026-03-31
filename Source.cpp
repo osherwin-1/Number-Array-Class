@@ -75,7 +75,7 @@ int main() { // Main function to demonstrate the NumberArray class
 
     cout << "\nEdge Case Tests:\n";
 
-    // Test array size of 1 (Edge case)
+    // Test array size of 1 (Edge case 1)
     NumberArray edgeArr(1);
 
     edgeArr.setNumber(0, -3.5);
@@ -104,5 +104,70 @@ int main() { // Main function to demonstrate the NumberArray class
     cout << "Min: " << edgeArr.getMinimum() << endl;
     cout << "Max: " << edgeArr.getMaximum() << endl;
     cout << "Average: " << edgeArr.getMean() << endl;
+
+    // Copy constructor test
+	cout << "\nCopy constructor test:\n";
+    NumberArray a(5);
+    for (int i = 0; i < 5; i++)
+        a.setNumber(i, (i + 1) * 10); // 10,20,30,40,50
+
+    NumberArray b(a); // copy constructor
+
+    cout << "Original (a): "; a.display();
+    cout << "Copy (b): "; b.display();
+
+    // Modify original
+    a.setNumber(0, 999);
+    cout << "\nAfter modifying a:\n";
+    cout << "a: "; a.display();
+    cout << "b (should be unchanged): "; b.display();
+
+    // Modify copy
+    b.setNumber(1, 555);
+    cout << "\nAfter modifying b:\n";
+    cout << "a (should be unchanged): "; a.display();
+    cout << "b: "; b.display();
+
+    // Assignment operator tests
+    cout << "\nAssignment operator tests\n";
+
+    NumberArray small(3);
+    NumberArray large(9);
+
+    for (int i = 0; i < 9; i++)
+        large.setNumber(i, i * 2);
+
+    small = large;
+
+    cout << "large: "; large.display();
+    cout << "small (after assignment): "; small.display();
+
+    // Self-assignment test
+    cout << "\nSelf-Assignment Test \n";
+
+    NumberArray e(4);
+    for (int i = 0; i < 4; i++)
+        e.setNumber(i, i + 10);
+
+    cout << "Before self-assign: "; e.display();
+    e = e; // self assignment
+    cout << "After self-assign: "; e.display();
+
+
+    // Edge case tests (2)
+    cout << "\n Edge Case Tests (2)\n";
+
+    // Size = 1
+    NumberArray edge(1);
+    edge.setNumber(0, 42);
+    edge.display();
+
+    // Multiple assignments
+    NumberArray x(3), y(3), z(3);
+    x.setNumber(0, 1);
+    y = x;
+    z = y;
+    cout << "Chain assignment result: ";
+    z.display();
     return 0;
 }
