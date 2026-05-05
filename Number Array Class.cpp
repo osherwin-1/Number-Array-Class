@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include "Header.h"
+#include "NumberArray.h"
 
 using namespace std;
 
