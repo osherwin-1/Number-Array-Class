@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include "NumberArray.h"
 #include "Number Array Class.cpp"
+
 using namespace std;
 
 int main() {
