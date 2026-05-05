@@ -30,8 +30,15 @@ int main() {
 		cout << e.what() << endl;
 	}
 	try {
-		cout << "Invalid access: ";
+		cout << "Invalid access (too large): ";
 		cout << intArray.getNumber(123456) << endl;
+	}
+	catch (const out_of_range& e) {
+		cout << e.what() << endl;
+	}
+	try {
+		cout << "Invalid access (negative): ";
+		cout << intArray.getNumber(-1) << endl;
 	}
 	catch (const out_of_range& e) {
 		cout << e.what() << endl;

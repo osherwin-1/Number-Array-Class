@@ -21,6 +21,7 @@ NumberArray<T>::NumberArray(int size) {
 template <typename T>
 NumberArray<T>::~NumberArray() {
     delete[] arr;
+	cout << "Destructor called, memory released." << endl;
 }
 
 // Deep Copy Constructor 
@@ -66,41 +67,6 @@ T NumberArray<T>::getNumber(int index) const {
         throw out_of_range("Index out of range");
 
     return arr[index];
-}
-
-// Minimum
-template <typename T>
-T NumberArray<T>::getMinimum() const {
-    T min = arr[0];
-
-    for (int i = 1; i < size; i++)
-        if (arr[i] < min)
-            min = arr[i];
-
-    return min;
-}
-
-// Maximum
-template <typename T>
-T NumberArray<T>::getMaximum() const {
-    T max = arr[0];
-
-    for (int i = 1; i < size; i++)
-        if (arr[i] > max)
-            max = arr[i];
-
-    return max;
-}
-
-// Mean
-template <typename T>
-T NumberArray<T>::getMean() const {
-    T sum = T();
-
-    for (int i = 0; i < size; i++)
-        sum += arr[i];
-
-    return sum / size;
 }
 
 // Display
